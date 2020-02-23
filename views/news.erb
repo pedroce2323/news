@@ -18,7 +18,7 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>News</title>
+    <title>Newspaper</title>
   </head>
   <body>
 
@@ -26,11 +26,19 @@
       <h1>News</h1>
     </div>
 
-    <form action="/news">
-        <label>Enter your location:</label>
-        <input type="text" name="location">
-        <button type="submit" class="btn btn-primary">Go there</submit>
-    </form>
+    <h1>
+        <p>"Welcome to <%= @lat %>, <%= @lng %>"</p>
+    </h1>
+
+    <h3> The current weather is: <%= @current_temp %> degrees and <%= @current_summary.downcase %> </h3>
+    <h3> The upcoming forecast is: </h3>
+        <div class="row">
+        <% for day in @forecast_array %>
+            <div class="col-sm-3">
+                <%= day %>
+            </div>
+        <% end %>
+      </div>
 
 
     <!-- Optional JavaScript -->
