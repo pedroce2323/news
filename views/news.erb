@@ -40,6 +40,21 @@
         <% end %>
       </div>
 
+      <h3> Latest News: </h3>
+   
+
+      <% i=0 %>
+    <div class="row">
+        <% for article in @news_array %>
+            <div class="col-sm-12">
+               <a href="<%= @link_array[i] %>"> <%= article %> </a>
+               <% i = i+1 %>
+            </div>
+        <% end %>
+      </div>
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
