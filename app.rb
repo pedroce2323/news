@@ -16,10 +16,11 @@ end
 
 get "/news" do
   # do everything else
-    results = Geocoder.search(params["location"])
-    lat_lng = results.first.coordinates
+    @results = Geocoder.search(params["location"])
+    lat_lng = @results.first.coordinates
     @lat = "#{lat_lng[0]}"
     @lng = "#{lat_lng[1]}"
+    @location = params["location"]
 
 
     # # do the heavy lifting, use Global Hub lat/long
@@ -34,7 +35,7 @@ get "/news" do
     @forecast_array = []
 
     for days in @forecast["daily"]["data"]
-        @forecast_array << "Day #{i}: A high temperature of #{days["temperatureHigh"]} and #{days["summary"]}"
+        @forecast_array << "Day #{i}: A high temperature of #{days["temperatureHigh"]} and #{days["summary"].downcase}"
         i = i + 1
     end
 
