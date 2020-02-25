@@ -20,7 +20,7 @@ get "/news" do
     lat_lng = @results.first.coordinates
     @lat = "#{lat_lng[0]}"
     @lng = "#{lat_lng[1]}"
-    @location = params["location"]
+    @location = params["location"].capitalize
 
 
     # # do the heavy lifting, use Global Hub lat/long

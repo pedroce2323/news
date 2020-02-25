@@ -1,0 +1,41 @@
+
+.bottomline {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.bottomline p {
+    color: slategray;
+}
+
+.navbar a{
+    margin-left: 20px;
+}
+
+.news {
+    margin-top: 10px; 
+}
+
+.news a{
+    font-family: 'Roboto', sans-serif;
+}
+
+.welcome {
+    font-family: 'Raleway', sans-serif;
+    margin-top: 15px;
+    background-color: rgb(233, 231, 231);
+}
+
+.daily_forecast {
+    margin-top: 10px;
+}
+
+.row a{
+    margin-top: 100px; 
+}
+
+
+h5 {
+    font-family: 'Roboto', sans-serif;
+}

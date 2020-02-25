@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <!-- Swap out "Roboto" for the font(s) you want to use -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
@@ -18,7 +18,7 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>Newspaper</title>
+    <title><%= @location %> Gazette</title>
   </head>
   <body>
 
@@ -38,22 +38,27 @@
   </nav>  
 
 
-    <div class="container">
+    <div class="container welcome">
     <h1>
-        <p>Welcome to <%= @location %></p>
+        <p>Welcome to the <%= @location %> Gazette</p>
     </h1>
+    </div>
 
-    <h3> The current weather is: <%= @current_temp %> degrees and <%= @current_summary.downcase %> </h3>
-    <h3> The upcoming 8-day forecast is: </h3>
+    <div class="container weather">
+    <h2> Weather Report </h2>
+    <h5> The current weather is: <%= @current_temp %> degrees and <%= @current_summary.downcase %> </h3>
+    <h5> The upcoming 8-day forecast is: </h3>
         <div class="row">
         <% for day in @forecast_array %>
-            <div class="col-sm-3">
+            <div class="col-sm-3 daily_forecast">
                 <%= day %>
             </div>
         <% end %>
       </div>
+      </div>
 
-      <h3> Latest News: </h3>
+    <div class="container news">
+      <h2> Latest News: </h2>
    
 
       <% i=0 %>
@@ -66,6 +71,18 @@
         <% end %>
       </div>
       </div>
+      
+
+
+    <div class="container bottomline">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Kellogg School of Management 2020
+        </p>
+      </div>  
+    </div>
+  </div>
 
 
 
