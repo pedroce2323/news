@@ -30,9 +30,9 @@ get "/news" do
     @current_summary = @forecast["currently"]["summary"]
 
 
-    i=1
-
     @forecast_array = []
+
+    i=1
 
     for days in @forecast["daily"]["data"]
         @forecast_array << "Day #{i}: A high temperature of #{days["temperatureHigh"]} and #{days["summary"].downcase}"
