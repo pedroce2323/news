@@ -15,12 +15,12 @@ get "/" do
 end
 
 get "/news" do
-  # do everything else
+  # code for weather portion
     @results = Geocoder.search(params["location"])
     lat_lng = @results.first.coordinates
     @lat = "#{lat_lng[0]}"
     @lng = "#{lat_lng[1]}"
-    @location = params["location"].capitalize
+    @location = params["location"]
 
 
     # # do the heavy lifting, use Global Hub lat/long
@@ -45,7 +45,7 @@ get "/news" do
     url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=7cd39bd834074372a1d972973b13df52"
     @news = HTTParty.get(url).parsed_response.to_hash
     
-    # news headlines
+    # news headlines and urls
     article_number=0
     @news_array = []
     @link_array = []
@@ -54,10 +54,9 @@ get "/news" do
         @link_array << @news["articles"][article_number]["url"]
         article_number = article_number + 1
     end
-
-
     
-    puts @news_array
+
+    # puts @news_array
 
     view "news"
 end
