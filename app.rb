@@ -35,7 +35,7 @@ get "/news" do
     i=1
 
     for days in @forecast["daily"]["data"]
-        @forecast_array << "Day #{i}: A high temperature of #{days["temperatureHigh"]} and #{days["summary"].downcase}"
+       @forecast_array << "Day #{i}: A high temperature of #{days["temperatureHigh"]}F and #{days["summary"].downcase}"
         i = i + 1
     end
 
@@ -58,8 +58,6 @@ get "/news" do
 
     
     puts @news_array
-
-    # news is now a Hash you can pretty print (pp) and parse for your output
 
     view "news"
 end
